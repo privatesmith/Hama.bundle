@@ -1,0 +1,210 @@
+<!doctype html>
+<!-- The Time Machine GitHub pages theme was designed and developed by Jon Rohan, on Feb 7, 2012. -->
+<!-- Follow him for fun. http://twitter.com/jonrohan. Tail his code on http://github.com/jonrohan -->
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <link rel="stylesheet" href="stylesheets/stylesheet.css" media="screen"/>
+  <link rel="stylesheet" href="stylesheets/pygment_trac.css"/>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  <script type="text/javascript" src="javascripts/script.js"></script>
+
+  <title>Hama.bundle</title>
+  <meta name="description" content="HTTP Anidb Metadata Agent (HAMA) for Plex">
+
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+</head>
+
+<body>
+
+  <div class="wrapper">
+    <header>
+      <h1 class="title">Hama.bundle</h1>
+    </header>
+    <div id="container">
+      <p class="tagline">HTTP Anidb Metadata Agent (HAMA) for Plex</p>
+      <div id="main" role="main">
+        <div class="download-bar">
+        <div class="inner">
+          <a href="https://github.com/ZeroQI/Hama.bundle/tarball/master" class="download-button tar"><span>Download</span></a>
+          <a href="https://github.com/ZeroQI/Hama.bundle/zipball/master" class="download-button zip"><span>Download</span></a>
+          <a href="https://github.com/ZeroQI/Hama.bundle" class="code">View Hama.bundle on GitHub</a>
+        </div>
+        <span class="blc"></span><span class="trc"></span>
+        </div>
+        <article class="markdown-body">
+          <h1>
+<a name="http-anidb-metadata-agent-hama" class="anchor" href="#http-anidb-metadata-agent-hama"><span class="octicon octicon-link"></span></a>HTTP Anidb Metadata Agent (HAMA)</h1>
+
+<p>Created By Atomicstrawberry and maintained until v0.4 <br></p>
+
+<ul>
+<li>http://forums.plexapp.com/index.php/topic/66918-release-http-anidb-metadata-agent-hama/</li>
+</ul><p>Forked from v0.4 and maintained since by ZeroQI <br></p>
+
+<ul>
+<li>http://forums.plexapp.com/index.php/topic/77636-release-http-anidb-metadata-agent-hama/</li>
+</ul><p><br>
+Here are the changes Between v0.5 and v0.4:<br></p>
+
+<p>New features</p>
+
+<ul>
+<li> Search part entirely local <br>Location: Hama.bundle\Contents\Resources\anime-titles.xml
+   </li>
+<li> AniDB id to TVDB id matching (with studio and episode mapping list) with ScudLee's xml mapping file <br>location: Hama.bundle\Contents\Resources\anime-list-full.xml
+   </li>
+<li> Episode summary downloaded from theTVDB.com in english only through episode mapping
+   </li>
+<li> using Studio from mapping file as often missing from AniDB.net
+   </li>
+<li> Separate language order selection for the serie name and episode titles
+   </li>
+<li> TVDB and AniDB serie, season and episode link integrated in summary
+   </li>
+<li> International support: kanjis in titles and folder names supported
+   </li>
+<li> Warnings in Serie or Episode description (no poster available, episode summary empty, TVDB id not in mapping file) to allow the community to update more easily the mapping XML or TVDB, list of missing episodes
+</li>
+</ul><p>Improvements</p>
+
+<ul>
+<li> Changed theTVDB.com picture function to reflect how the XML behaves, removing most un-necessary "thumbnail not available" logs.
+   </li>
+<li> Changed theTVDB.com picture function to put season posters on seasons only [still in progress]
+   </li>
+<li> Reduced the number of functions: searchByName and parseAnimeXml are directly called by the agent now
+   </li>
+<li> Commented source code.
+   </li>
+<li> Normalised Logging
+   </li>
+<li> imported movie bolean from AniDB.net xml
+   </li>
+<li> Commented some file formats in the source for clarity when reading
+</li>
+</ul><h1>
+<a name="scudlee-xml-mapping-files" class="anchor" href="#scudlee-xml-mapping-files"><span class="octicon octicon-link"></span></a>ScudLee xml mapping files</h1>
+
+<p>I use the following XML files from ScudLee with his approval:</p>
+
+<ul>
+<li> anime-list-full.xml: maps the AniDB id to the TVDB id, providing the studio and episode mapping matrix</li>
+   <li> anime-movieset-list.xml: allow to group movies together</li>
+</ul><p>Source, format, contributing: <a href="https://github.com/ScudLee/anime-lists/blob/master/README.md">https://github.com/ScudLee/anime-lists/blob/master/README.md</a>
+XBMC Forum thread: <a href="http://forum.xbmc.org/showthread.php?tid=142835&amp;pid=1432010#pid1432010">http://forum.xbmc.org/showthread.php?tid=142835&amp;pid=1432010#pid1432010</a></p>
+
+<h1>
+<a name="better-absolute-scanner-babs" class="anchor" href="#better-absolute-scanner-babs"><span class="octicon octicon-link"></span></a>Better ABsolute Scanner (BABS)</h1>
+
+<p>I also use that scanner cojointly as it allows for absolute numbering, a requirement with AniDB.
+<a href="http://forums.plexapp.com/index.php/topic/31081-better-absolute-scanner-babs/">http://forums.plexapp.com/index.php/topic/31081-better-absolute-scanner-babs/</a></p>
+
+<h1>
+<a name="installation" class="anchor" href="#installation"><span class="octicon octicon-link"></span></a>Installation</h1>
+
+<p>Get the latest zip package in the thread: <a href="https://forums.plex.tv/index.php?app=core&amp;module=attach&amp;section=attach&amp;attach_id=29291">https://forums.plex.tv/index.php?app=core&amp;module=attach&amp;section=attach&amp;attach_id=29291</a>. It does contain most data folders to create, or download all files there.</p>
+
+<p>Copy the agent folder ("Hama.bundle") in: (Source: <a href="https://support.plex.tv/hc/en-us/articles/201106098-How-do-I-find-the-Plug-Ins-folder-">https://support.plex.tv/hc/en-us/articles/201106098-How-do-I-find-the-Plug-Ins-folder-</a>)</p>
+
+<ul>
+<li>      - Windows Windows XP, Server 2003, Home Server: C:\Documents and Settings\yourusername\Local Settings\Application Data\Plex Media Server\Plug-Ins\</li>
+   <li>     - Windows Vista, Windows 7, Windows 8:          %LOCALAPPDATA%\Plex Media Server\Plug-Ins\ (%LOCALAPPDATA% = C:\Users\XXXXX\AppData\Local\)</li>
+   <li>     - Mac OS X:                                     ~/Library/Application Support/Plex Media Server/Plug-Ins</li>
+   <li>     - Linux:                                        $PLEX_HOME/Library/Application Support/Plex Media Server/Plug-Ins</li>
+   <li>     - QNAP:                                         /share/MD0_DATA/.qpkg/PlexMediaServer/Library/Plex Media Server/Plug-ins</li>
+                                                     /root/Library/Plex Media Server/Plug-ins (also present here If running only)
+   <li>     - Synology:                                     /volume1/Plex/Library/Application Support/Plex Media Server/Plug-ins</li>
+   <li>                                                     Plex/Library/Application Support/Plex Media Server/Plug-ins (In File Station, no console needed)</li>
+</ul><p>Go into the agent data folder ("plug-in Support/Data/com.plexapp.agents.hama/DataItems"):
+     - Synology:                                     /volume1/Plex/Library/Application Support/Plex Media Server/Plug-in Support/Data/com.plexapp.agents.hama/DataItems</p>
+
+<p>Create the following folders in it:</p>
+
+<ul>
+<li> "AniDB"</li>
+   <li> "Plex"</li>
+   <li> "TVDB/_cache/fanart/original"</li>
+   <li> "TVDB/fanart/original"</li>
+   <li> "TVDB/fanart/vignette"</li>
+   <li> "TVDB/graphical"</li>
+   <li> "TVDB/posters"</li>
+   <li> "TVDB/seasons"</li>
+   <li> "TVDB/seasonswide"</li>
+   <li> "TVDB/text"</li>
+</ul><p>The XMLs are downloaded (cached for 2 weeks) and a copy is saved here and used in case of internet issue:</p>
+
+<ul>
+<li> anime-titles.xml        AniDB HTTP API, contain all anime titles, downloaded from http://anidb.net/api/anime-titles.xml.gz</li>
+   <li> anime-list-master.xml   ScudLee's AniDB to TVDB xml mapping file, give studio and episode mapping list for te episode overview, downloaded from https://raw.github.com/ScudLee/anime-lists/master/anime-list-master.xml</li>
+   <li> anime-movieset-list.xml ScudLee's movie collection (Because XBMC only support movie collection and the files were develloped for AniDB mod XBMC plugin), downloaded from https://raw.github.com/ScudLee/anime-lists/master/anime-movieset-list.xml</li>
+</ul><p>Agents can only write data in data folder as binary objects or as dictionaries, but cannot create folders unfortunatly
+I use theses folders to cache all pictures, theme songs, since they are not cached by plex.
+This way, even if you recreate the whole Plex anime folder entry, you do not have to download the same file again.</p>
+
+<p>it downloads the XMLs from the internet (using pelx cache for 1 week), then local, then ressource folder
+For pictures and theme songs, it takes from the cache first, then the internet</p>
+
+<p>Updating:
+   . replace <strong>init</strong>.py with the latest on <a href="https://github.com/ZeroQI/Hama/blob/master/Hama.bundle/Contents/Code/__init__.py">https://github.com/ZeroQI/Hama/blob/master/Hama.bundle/Contents/Code/__init__.py</a>
+   . If no folder in data was created or data moved there and no new option was added to the agent settings, it will work</p>
+
+<p>After restarting Plex servers, the new agent will be loaded and you will find all agents settings in the official framework agent settings window:
+   . "Plex &gt; Settings &gt; Server &gt; Agents &gt; TV Shows &gt; HamaTV &gt; Agent settings"</p>
+
+<h1>
+<a name="troubleshooting" class="anchor" href="#troubleshooting"><span class="octicon octicon-link"></span></a>Troubleshooting:</h1>
+
+<p>Check the data folders are created and the agent is where it should be, paste the agent logs relevant section</p>
+
+<p>Plex Logs:</p>
+
+<ul>
+<li> Agent logs:        /volume1/Plex/Library/Application Support/Plex Media Server/Logs/PMS Plugin Logs/com.plexapp.agents.hama.log</li>
+   <li> Media Server logs: /volume1/Plex/Library/Application Support/Plex Media Server/Logs/Plex Media Server.log</li>
+   <li> Media Scannerlogs: /volume1/Plex/Library/Application Support/Plex Media Server/Logs/Plex Media Scanner.log</li>
+</ul><p>Hama specific html logs to allow to update databases for missing info or to list missing episodes</p>
+
+<ul>
+<li> /volume1/Plex/Library/Application Support/Plex Media Server/Plug-in Support/Data/com.plexapp.agents.hama/DataItems/anime-list.htm</li>
+   <li> /volume1/Plex/Library/Application Support/Plex Media Server/Plug-in Support/Data/com.plexapp.agents.hama/DataItems/themes.htm</li>
+   <li> /volume1/Plex/Library/Application Support/Plex Media Server/Plug-in Support/Data/com.plexapp.agents.hama/DataItems/TVDB.htm</li>
+   <li> /volume1/Plex/Library/Application Support/Plex Media Server/Plug-in Support/Data/com.plexapp.agents.hama/DataItems/AniDB.htm</li>
+   <li> /volume1/Plex/Library/Application Support/Plex Media Server/Plug-in Support/Data/com.plexapp.agents.hama/DataItems/Missing Episodes.htm
+</li>
+</ul><h1>
+<a name="to-do" class="anchor" href="#to-do"><span class="octicon octicon-link"></span></a>To Do</h1>
+
+<p></p><ul>
+<li> Package of Studio Logos (see post <a href="https://forums.plex.tv/index.php/topic/77636-release-http-anidb-metadata-agent-hama/?p=451061">https://forums.plex.tv/index.php/topic/77636-release-http-anidb-metadata-agent-hama/?p=451061</a>). Will not work on that but somebody else can</li>
+   <li> Package of Theme Songs supported, but none exist (name convention: anidbid.mp3). Plex use 30s songs but use seasons, so a package of songs capped at 30s should share the same legality. will not work on that but local loading works</li>
+   <li> Need to ammend the code so that not putting folders still download posters albeit without caching</li>
+   <li> Need to splig logs created so each contain one type of issue only (as overview missing in thetvdb flood poster missing messages for example)</li>
+   <li> Should i cache locally anidb XML? they are cached for 2 weeks so even if banned for a day, will allow to finish the next day...</li>
+</ul>
+        </article>
+      </div>
+    </div>
+    <footer>
+      <div class="owner">
+      <p><a href="https://github.com/ZeroQI" class="avatar"><img src="https://avatars2.githubusercontent.com/u/5163877?s=60" width="48" height="48"/></a> <a href="https://github.com/ZeroQI">ZeroQI</a> maintains <a href="https://github.com/ZeroQI/Hama.bundle">Hama.bundle</a></p>
+
+
+      </div>
+      <div class="creds">
+        <small>This page generated using <a href="http://pages.github.com/">GitHub Pages</a><br/>theme by <a href="https://twitter.com/jonrohan/">Jon Rohan</a></small>
+      </div>
+    </footer>
+  </div>
+  <div class="current-section">
+    <a href="#top">Scroll to top</a>
+    <a href="https://github.com/ZeroQI/Hama.bundle/tarball/master" class="tar">tar</a><a href="https://github.com/ZeroQI/Hama.bundle/zipball/master" class="zip">zip</a><a href="" class="code">source code</a>
+    <p class="name"></p>
+  </div>
+
+  
+</body>
+</html>
