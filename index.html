@@ -39,52 +39,29 @@
           <h1>
 <a name="http-anidb-metadata-agent-hama" class="anchor" href="#http-anidb-metadata-agent-hama"><span class="octicon octicon-link"></span></a>HTTP Anidb Metadata Agent (HAMA)</h1>
 
-<p>Created By Atomicstrawberry and maintained until v0.4 <br></p>
+<p>HAMA was created By Atomicstrawberry, and the latest version he released was v0.4 <br></p>
 
 <ul>
 <li>http://forums.plexapp.com/index.php/topic/66918-release-http-anidb-metadata-agent-hama/</li>
-</ul><p>Forked from v0.4 and maintained since by ZeroQI <br></p>
+</ul><p>ZeroQI (me) took over starting at v0.5 and maintained since <br></p>
 
 <ul>
 <li>http://forums.plexapp.com/index.php/topic/77636-release-http-anidb-metadata-agent-hama/</li>
 </ul><p><br>
-Here are the changes Between v0.5 and v0.4:<br></p>
-
-<p>New features</p>
+Here are the features:<br></p>
 
 <ul>
-<li> Search part entirely local <br>Location: Hama.bundle\Contents\Resources\anime-titles.xml
+<li> Separate language order selection for the serie name and episode titles in Agent Settings (Supports Kanjis in folders, filenames, titles)
    </li>
-<li> AniDB id to TVDB id matching (with studio and episode mapping list) with ScudLee's xml mapping file <br>location: Hama.bundle\Contents\Resources\anime-list-full.xml
+<li> Episode summary courtesy of TVDB in english only through episode mapping
    </li>
-<li> Episode summary downloaded from theTVDB.com in english only through episode mapping
+<li> using Studio from mapping file then AniDB (as often missing from AniDB)
    </li>
-<li> using Studio from mapping file as often missing from AniDB.net
+<li> Search part entirely local through AniDB HTML API database file anime-titles.xml
    </li>
-<li> Separate language order selection for the serie name and episode titles
-   </li>
-<li> TVDB and AniDB serie, season and episode link integrated in summary
-   </li>
-<li> International support: kanjis in titles and folder names supported
+<li> AniDB id to TVDB/TMDB id matching (with studio and episode mapping list) with ScudLee's xml mapping file (anime-list-full.xml)
    </li>
 <li> Warnings in Serie or Episode description (no poster available, episode summary empty, TVDB id not in mapping file) to allow the community to update more easily the mapping XML or TVDB, list of missing episodes
-</li>
-</ul><p>Improvements</p>
-
-<ul>
-<li> Changed theTVDB.com picture function to reflect how the XML behaves, removing most un-necessary "thumbnail not available" logs.
-   </li>
-<li> Changed theTVDB.com picture function to put season posters on seasons only [still in progress]
-   </li>
-<li> Reduced the number of functions: searchByName and parseAnimeXml are directly called by the agent now
-   </li>
-<li> Commented source code.
-   </li>
-<li> Normalised Logging
-   </li>
-<li> imported movie bolean from AniDB.net xml
-   </li>
-<li> Commented some file formats in the source for clarity when reading
 </li>
 </ul><h1>
 <a name="scudlee-xml-mapping-files" class="anchor" href="#scudlee-xml-mapping-files"><span class="octicon octicon-link"></span></a>ScudLee xml mapping files</h1>
@@ -92,21 +69,31 @@ Here are the changes Between v0.5 and v0.4:<br></p>
 <p>I use the following XML files from ScudLee with his approval:</p>
 
 <ul>
-<li> anime-list-full.xml: maps the AniDB id to the TVDB id, providing the studio and episode mapping matrix</li>
+<li> anime-list-full.xml:     maps the AniDB id to the TVDB id, providing the studio and episode mapping matrix</li>
    <li> anime-movieset-list.xml: allow to group movies together</li>
 </ul><p>Source, format, contributing: <a href="https://github.com/ScudLee/anime-lists/blob/master/README.md">https://github.com/ScudLee/anime-lists/blob/master/README.md</a>
-XBMC Forum thread: <a href="http://forum.xbmc.org/showthread.php?tid=142835&amp;pid=1432010#pid1432010">http://forum.xbmc.org/showthread.php?tid=142835&amp;pid=1432010#pid1432010</a></p>
+XBMC Forum thread:            <a href="http://forum.xbmc.org/showthread.php?tid=142835&amp;pid=1432010#pid1432010">http://forum.xbmc.org/showthread.php?tid=142835&amp;pid=1432010#pid1432010</a></p>
 
-<h1>
+<p>I also use AniDB HTTP title database file</p>
+
+<ul>
+<li> anime-titles.xml      mentionned http://wiki.anidb.net/w/API and downloadable http://anidb.net/api/anime-titles.xml.gz once a day MAXIMUM</li>
+</ul><h1>
 <a name="better-absolute-scanner-babs" class="anchor" href="#better-absolute-scanner-babs"><span class="octicon octicon-link"></span></a>Better ABsolute Scanner (BABS)</h1>
 
-<p>I also use that scanner cojointly as it allows for absolute numbering, a requirement with AniDB.
-<a href="http://forums.plexapp.com/index.php/topic/31081-better-absolute-scanner-babs/">http://forums.plexapp.com/index.php/topic/31081-better-absolute-scanner-babs/</a></p>
+<p>I recommend installing that scanner as it supports absolute numbering, a requirement with AniDB and anime in general.
+Please note all user specific scanner type directories are NOT created by default
+Source:   <a href="http://forums.plexapp.com/index.php/topic/31081-better-absolute-scanner-babs/">http://forums.plexapp.com/index.php/topic/31081-better-absolute-scanner-babs/</a></p>
+
+<p>Installation Folder:
+   . Ubuntu:   ~/Library/Application Support/Plex Media Server/Scanners/Series/BABS.py 
+   . Synology: (/volume1) /Plex/Library/Application Support/Plex Media Server/Scanners/Series/BABS.py</p>
 
 <h1>
 <a name="installation" class="anchor" href="#installation"><span class="octicon octicon-link"></span></a>Installation</h1>
 
-<p>Get the latest zip package in the thread: <a href="https://forums.plex.tv/index.php?app=core&amp;module=attach&amp;section=attach&amp;attach_id=29291">https://forums.plex.tv/index.php?app=core&amp;module=attach&amp;section=attach&amp;attach_id=29291</a>. It does contain most data folders to create, or download all files there.</p>
+<p>Get the latest zip package in the thread: <a href="https://forums.plex.tv/index.php?app=core&amp;module=attach&amp;section=attach&amp;attach_id=29291">https://forums.plex.tv/index.php?app=core&amp;module=attach&amp;section=attach&amp;attach_id=29291</a>. It does contain most data folders to create, or download all files there.
+I am workign to create release packages on GitHub currently</p>
 
 <p>Copy the agent folder ("Hama.bundle") in: (Source: <a href="https://support.plex.tv/hc/en-us/articles/201106098-How-do-I-find-the-Plug-Ins-folder-">https://support.plex.tv/hc/en-us/articles/201106098-How-do-I-find-the-Plug-Ins-folder-</a>)</p>
 
@@ -117,9 +104,9 @@ XBMC Forum thread: <a href="http://forum.xbmc.org/showthread.php?tid=142835&amp;
    <li>     - Linux:                                        $PLEX_HOME/Library/Application Support/Plex Media Server/Plug-Ins</li>
    <li>     - QNAP:                                         /share/MD0_DATA/.qpkg/PlexMediaServer/Library/Plex Media Server/Plug-ins</li>
                                                      /root/Library/Plex Media Server/Plug-ins (also present here If running only)
-   <li>     - Synology:                                     /volume1/Plex/Library/Application Support/Plex Media Server/Plug-ins</li>
-   <li>                                                     Plex/Library/Application Support/Plex Media Server/Plug-ins (In File Station, no console needed)</li>
-</ul><p>Go into the agent data folder ("plug-in Support/Data/com.plexapp.agents.hama/DataItems"):
+   <li>     - Synology:                                     (/volume1) Plex/Library/Application Support/Plex Media Server/Plug-ins</li> 
+</ul><p>(Optional) Data folders if you want local cache for images and theme songs
+Go into the agent data folder ("plug-in Support/Data/com.plexapp.agents.hama/DataItems"):
      - Synology:                                     /volume1/Plex/Library/Application Support/Plex Media Server/Plug-in Support/Data/com.plexapp.agents.hama/DataItems</p>
 
 <p>Create the following folders in it:</p>
