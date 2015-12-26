@@ -191,6 +191,9 @@ class HamaCommonAgent:
 
   ### Parse the AniDB anime title XML ##################################################################################################################################
   def Update(self, metadata, media, lang, force, movie):
+    Log.Info('MD_ID: {}'.format(metadata.id))
+    if not '-' in metadata.id:
+        metadata.id = 'anidb-{}'.format(metadata.id)
 
     Log.Debug('--- Update Begin -------------------------------------------------------------------------------------------')
     if not "-" in metadata.id:  metadata.id = "anidb-" + metadata.id  # Old metadata from when the id was only the anidbid
