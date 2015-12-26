@@ -631,7 +631,7 @@ class HamaCommonAgent:
   ### Pull down the XML from web and cache it or from local cache for a given anime ID ####################################################################
   def xmlElementFromFile (self, url, filename="", delay=True, cache=None):
     Log.Debug("xmlElementFromFile() - url: '%s', filename: '%s'" % (url, filename))
-    if delay:  time.sleep(4) #2s between anidb requests but 2 threads                                                                                                   # Ban after 160 series if too short, ban also if same serie xml downloaded repetitively, delay for AniDB only for now     e #try:    a = urllib.urlopen(url)#if a is not None and a.getcode()==200:
+    if delay:  time.sleep(16) #2s between anidb requests but 2 threads                                                                                                   # Ban after 160 series if too short, ban also if same serie xml downloaded repetitively, delay for AniDB only for now     e #try:    a = urllib.urlopen(url)#if a is not None and a.getcode()==200:
     try:     result = str(HTTP.Request(url, headers={'Accept-Encoding':'gzip', 'content-type':'charset=utf8'}, timeout=20, cacheTime=cache))  # Loaded with Plex cache, str prevent AttributeError: 'HTTPRequest' object has no attribute 'find'
     except:  result = None #Log.Debug("xmlElementFromFile() - XML issue loading url: '%s'" % url )                                                      # issue loading, but not AniDB banned as it returns "<error>Banned</error>"
     
