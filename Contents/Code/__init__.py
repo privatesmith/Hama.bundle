@@ -23,7 +23,7 @@ THEME_URL                    = 'http://tvthemes.plexapp.com/%s.mp3'             
 RESTRICTED_CONTENT_RATING    = "NC-17"
 RESTRICTED_GENRE_NAMES       = [ '18 Restricted', 'Pornography' ]
 FILTER_CHARS                 = "\\/:*?<>|~-; "
-SPLIT_CHARS                  = [';', ':', '*', '?', ',', '.', '~', '-', '\\', '/' ] #Space is implied, characters forbidden by os filename limitations
+SPLIT_CHARS                  = [';', '*', '?', ',', '.', '~', '-', '\\', '/' ] #Space is implied, characters forbidden by os filename limitations
 WEB_LINK                     = "<a href='%s' target='_blank'>%s</a>"
 GENRE_NAMES                  = [  ### List of AniDB category names useful as genre. 1st variable mark 18+ categories. The 2nd variable will actually cause a flag to appear in Plex ####################
   ### Audience categories - all useful but not used often ############################################################################################################
