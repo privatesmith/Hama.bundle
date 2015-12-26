@@ -416,12 +416,6 @@ class HamaCommonAgent:
             epNum,    eid    = episode.xpath('epno')[0], episode.get('id')
             epNumType        = epNum.get('type')
             season, epNumVal = "1" if epNumType == "1" else "0", epNum.text if epNumType == "1" else str( specials[ epNum.text[0] ][0] + int(epNum.text[1:]))
-            if epNumType=="3":
-              if ep_title.startswith("Ending"):
-                if op_nb==0: op_nb = int(epNum.text[1:])-1 #first type 3 is first ending so epNum.text[1:] -1 = nb openings
-                epNumVal = str( int(epNumVal) +50-op_nb)   #shifted to 150 for 1st ending.  
-              Log.Debug("Update() - AniDB specials title - Season: '%s', epNum.text: '%s', epNumVal: '%s', ep_title: '%s'" % (season, epNum.text, epNumVal, ep_title) )
-             
             if not (season in media.seasons and epNumVal in media.seasons[season].episodes):  #Log.Debug("update - Season: '%s', Episode: '%s' => '%s' not on disk" % (season, epNum.text, epNumVal) )
               if epNumType == "1": missing_eps.append(" s" + season + "e" + epNumVal )
               continue
